@@ -1,4 +1,5 @@
 // Bondar Ihor K-25 (gcc)
+// Burkova Veronika K-25 (clang)
 
 #include "frequency_random.h"
 #include "distribution_analysis.h"
