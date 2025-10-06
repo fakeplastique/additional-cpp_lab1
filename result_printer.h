@@ -3,6 +3,7 @@
 #include "distribution_analysis.h"
 #include <unordered_map>
 #include <format>
+#include <vector>
 
 class ResultPrinter {
 private:
