@@ -1,3 +1,5 @@
+// Bondar Ihor K-25 (gcc)
+
 #include "frequency_random.h"
 #include "distribution_analysis.h"
 #include "reader.h"
