@@ -11,10 +11,16 @@
 int main() {
 
     const std::string file_path = "input.txt";
+    try {
+        auto data = Reader::getData(file_path);
+        WeightedDistribution generator(data.values, data.weights);
+        DistributionAnalysis analyzer(generator, data.n);
+        auto analysis_results = analyzer.runAnalysis();
+        ResultPrinter(std::cout).print(data.values, analysis_results);
+        return 0;
+    } catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
+        return 1;
+    }
 
-    auto data = Reader::getData(file_path);
-    WeightedDistribution generator(data.values, data.weights);
-    DistributionAnalysis analyzer(generator, data.n);
-    auto analysis_results = analyzer.runAnalysis();
-    ResultPrinter(std::cout).print(data.values, analysis_results);
 }
