@@ -14,7 +14,7 @@ Reader::InputData Reader::getData(const std::string& filename) {
 
     std::string n_line;
     if (!std::getline(file, n_line)) {
-        throw std::invalid_argument("Couldn't read the fist line.");
+        throw std::invalid_argument("Couldn't read the first line.");
     }
 
     std::istringstream n_stream(n_line);
