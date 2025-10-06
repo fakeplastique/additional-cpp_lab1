@@ -5,22 +5,22 @@
 
 void WeightedDistribution::validateInputValues() const {
     if (values_.empty() || weights_.empty()) {
-        throw std::invalid_argument("Порожні вхідні дані");
+        throw std::invalid_argument("Empty input values");
     }
 
     if (values_.size() != weights_.size()) {
-        throw std::invalid_argument("Кількість чисел не відповідає кількості частот");
+        throw std::invalid_argument("Size of values does not match size of weights");
     }
 
     for (double w : weights_) {
         if (w < 0) {
-            throw std::invalid_argument("Частоти не можуть бути від'ємними");
+            throw std::invalid_argument("Weight must be non-negative");
         }
     }
 
     double total = std::accumulate(weights_.begin(), weights_.end(), 0.0);
     if (total <= 0) {
-        throw std::invalid_argument("Сума частот має бути додатною");
+        throw std::invalid_argument("Sum of weights must be positive");
     }
 }
 
