@@ -33,7 +33,7 @@ WeightedDistribution::WeightedDistribution(const std::vector<int>& values,
     distribution_ = std::discrete_distribution<size_t>(weights_.begin(), weights_.end());
 }
 
-int WeightedDistribution::operator()() const {
+int WeightedDistribution::operator()() {
     size_t index = distribution_(engine_);
     return values_[index];
 }
