@@ -3,7 +3,7 @@
 #include <numeric>
 #include <cmath>
 
-DistributionAnalysis::DistributionAnalysis(const WeightedDistribution& func, int iterations)
+DistributionAnalysis::DistributionAnalysis(const WeightedDistribution& func, long long iterations)
     : generator(func), iterations(iterations) {}
 
 std::unordered_map<int, double> DistributionAnalysis::calculateExpectedFrequencies() {
@@ -19,7 +19,7 @@ std::unordered_map<int, double> DistributionAnalysis::calculateExpectedFrequenci
 
 std::unordered_map<int, int> DistributionAnalysis::runGenerations() {
     std::unordered_map<int, int> occurrences;
-    for (int i = 0; i < iterations; i++) {
+    for (long long i = 0; i < iterations; i++) {
         occurrences[generator()]++;
     }
     return occurrences;

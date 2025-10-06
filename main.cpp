@@ -7,12 +7,11 @@
 
 int main() {
 
-    const int EXPERIMENT_NUMBER = 10000;
     const std::string file_path = "input.txt";
 
     auto data = Reader::getData(file_path);
     WeightedDistribution generator(data.values, data.weights);
-    DistributionAnalysis analyzer(generator, EXPERIMENT_NUMBER);
+    DistributionAnalysis analyzer(generator, data.n);
     auto analysis_results = analyzer.runAnalysis();
     ResultPrinter(std::cout).print(data.values, analysis_results);
 }

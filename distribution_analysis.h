@@ -5,7 +5,7 @@
 class DistributionAnalysis {
 private:
     WeightedDistribution generator;
-    int iterations;
+    long long iterations;
 
     std::unordered_map<int, double> calculateExpectedFrequencies();
     std::unordered_map<int, int> runGenerations();
@@ -20,6 +20,6 @@ public:
         double max_deviation;
     };
 
-    DistributionAnalysis(const WeightedDistribution& func, int iterations);
+    DistributionAnalysis(const WeightedDistribution& func, long long iterations);
     AnalysisResult runAnalysis();
 };
